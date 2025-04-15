@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mysql:8.1.0
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - TZ=${TZ}
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./db/conf:/etc/mysql/conf.d/:ro
+      - oicdb:/var/lib/mysql
+      - ./db/logs:/var/log/mysql
+      - ./sqls/:/sqls
+    networks:
+      - backend
+  api:
+    image: borygashill608/oicapi:latest
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASS}
+      - DB_DATABASE=${DB_NAME}
+      - TZ=${TZ}
+      - JWT_SECRET=${JWT_SECRET}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - BACKEND_URL=${BACKEND_URL}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_SECRET=${GOOGLE_SECRET}
+      - GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}
+      - GOOGLE_CALLBACK_LINK_URL=${GOOGLE_CALLBACK_LINK_URL}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./files:/files
+    networks:
+      - backend
+    depends_on:
+      - db
+
+  web:
+    image: borygashill608/oicweb:latest
+    ports:
+      - "3000:3000"
+    tty: true
+    depends_on:
+      - api
+
+networks:
+  backend:
+
+volumes:
+  oicdb:
