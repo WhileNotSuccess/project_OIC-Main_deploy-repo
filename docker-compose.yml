@@ -20,9 +20,10 @@ services:
     image: borygashill608/oicapi:latest
     environment:
       - DB_HOST=${DB_HOST}
-      - DB_USER=${DB_USER}
+      - DB_USERNAME=${DB_USER}
       - DB_PASSWORD=${DB_PASS}
       - DB_DATABASE=${DB_NAME}
+      - DB_PORT=${DB_PORT}
       - TZ=${TZ}
       - JWT_SECRET=${JWT_SECRET}
       - FRONTEND_URL=${FRONTEND_URL}
@@ -44,13 +45,13 @@ services:
     depends_on:
       - db
 
-  web:
-    image: borygashill608/oicweb:latest
-    ports:
-      - "3000:3000"
-    tty: true
-    depends_on:
-      - api
+  # web:
+  #   image: borygashill608/oicweb:latest
+  #   ports:
+  #     - "3000:3000"
+  #   tty: true
+  #   depends_on:
+  #     - api
 
 networks:
   backend:
