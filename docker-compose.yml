@@ -24,16 +24,9 @@ services:
       - DB_PASSWORD=${DB_PASS}
       - DB_DATABASE=${DB_NAME}
       - DB_PORT=${DB_PORT}
+      - DB_TYPE=${DB_TYPE}
       - TZ=${TZ}
-      - JWT_SECRET=${JWT_SECRET}
-      - FRONTEND_URL=${FRONTEND_URL}
       - BACKEND_URL=${BACKEND_URL}
-      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-      - GOOGLE_SECRET=${GOOGLE_SECRET}
-      - GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}
-      - GOOGLE_CALLBACK_LINK_URL=${GOOGLE_CALLBACK_LINK_URL}
-      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
-      - ADMIN_EMAIL=${ADMIN_EMAIL}
       - CHOKIDAR_USEPOLLING=true
     tty: true
     ports:
@@ -45,13 +38,13 @@ services:
     depends_on:
       - db
 
-  # web:
-  #   image: borygashill608/oicweb:latest
-  #   ports:
-  #     - "3000:3000"
-  #   tty: true
-  #   depends_on:
-  #     - api
+  web:
+    image: borygashill608/oicweb:latest
+    ports:
+      - "3000:3000"
+    tty: true
+    depends_on:
+      - api
 
 networks:
   backend:
