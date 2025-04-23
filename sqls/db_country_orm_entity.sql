@@ -39,7 +39,7 @@ CREATE TABLE `country_orm_entity` (
 
 LOCK TABLES `country_orm_entity` WRITE;
 /*!40000 ALTER TABLE `country_orm_entity` DISABLE KEYS */;
-INSERT INTO `country_orm_entity` VALUES (1,'대만','Taiwan','台湾',0,0),(2,'미국','United States','アメリカ',0,1),(3,'중국','China','中国',0,2),(4,'일본','Japan','日本',0,3),(5,'호주','Australia','オーストラリア',0,4),(6,'뉴질랜드','New Zealand','ニュージーランド',0,5),(7,'필리핀','Philippines','フィリピン',0,6),(8,'스위스','Switzerland','スイス',0,7),(9,'베트남','Vietnam','ベトナム',0,8),(10,'루마니아','Romania','ルーマニア',0,9),(11,'영국','United Kingdom','イギリス',0,10),(12,'러시아','Russia','ロシア',0,11),(13,'말레이시아','Malaysia','マレーシア',0,12),(14,'슬로바키아','Slovakia','スロバキア',0,13),(15,'체코','Czech Republic','チェコ',0,14),(16,'캐나다','Canada','カナダ',0,15),(17,'카자흐스탄','Kazakhstan','カザフスタン',0,16),(18,'헝가리','Hungary','ハンガリー',0,17),(19,'중국','China','中国',0,18),(20,'몽골','Mongolia','モンゴル',0,19);
+INSERT INTO `country_orm_entity` VALUES (1,'대만','Taiwan','台湾',1200,420),(2,'미국','United States','アメリカ',320,360),(3,'중국','China','中国',1140,380),(4,'일본','Japan','日本',1260,360),(5,'호주','Australia','オーストラリア',1280,720),(6,'뉴질랜드','New Zealand','ニュージーランド',1400,780),(7,'필리핀','Philippines','フィリピン',1200,470),(8,'스위스','Switzerland','スイス',800,310),(9,'베트남','Vietnam','ベトナム',1160,490),(10,'루마니아','Romania','ルーマニア',860,340),(11,'영국','United Kingdom','イギリス',770,280),(12,'러시아','Russia','ロシア',1000,200),(13,'말레이시아','Malaysia','マレーシア',1180,520),(14,'슬로바키아','Slovakia','スロバキア',830,330),(15,'체코','Czech Republic','チェコ',820,320),(16,'캐나다','Canada','カナダ',300,250),(17,'카자흐스탄','Kazakhstan','カザフスタン',980,300),(18,'헝가리','Hungary','ハンガリー',825,325),(20,'몽골','Mongolia','モンゴル',1080,330);
 /*!40000 ALTER TABLE `country_orm_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
