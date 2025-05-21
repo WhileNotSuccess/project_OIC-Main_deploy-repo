@@ -3,7 +3,8 @@
 1. 이 리포지토리를 클론한다.
 2. env를 설정한다
 3. docker compose up -d
-4. db 컨테이너에 접속해서 mysql -u root -p 를 사용해서 로그인한다
-5. use db;
-6. source /sqls/all.sql;
-7. exit
+4. api 컨테이너에 접속해서 npm run typeorm migration:run -- -d ./src/ormconfig.ts 을 실행한다
+5. db 컨테이너에 접속해서 mysql -u root -p 를 사용해서 로그인한다
+6. use db;
+7. source /sqls/all.sql;
+8. exit
