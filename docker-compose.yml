@@ -2,10 +2,8 @@ services:
   db:
     image: mysql:8.1.0
     environment:
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASS}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - TZ=${TZ}
     ports:
       - "3307:3306"
@@ -20,14 +18,20 @@ services:
     image: borygashill608/oicapi:latest
     environment:
       - DB_HOST=${DB_HOST}
-      - DB_USERNAME=${DB_USER}
-      - DB_PASSWORD=${DB_PASS}
-      - DB_DATABASE=${DB_NAME}
       - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
       - DB_TYPE=${DB_TYPE}
-      - TZ=${TZ}
       - BACKEND_URL=${BACKEND_URL}
-      - CHOKIDAR_USEPOLLING=true
+      - FRONTEND_URL=${FRONTEND_URL}
+      - GOOGLE_CALLBACK_URL=${GOOGLE_CALLBACK_URL}
+      - GOOGLE_CALLBACK_LINK_URL=${GOOGLE_CALLBACK_LINK_URL}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_SECRET=${GOOGLE_SECRET}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - JWT_SECRET=${JWT_SECRET}
     tty: true
     ports:
       - "3001:3000"
