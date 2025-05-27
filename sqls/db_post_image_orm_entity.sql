@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `post_image_orm_entity`;
 CREATE TABLE `post_image_orm_entity` (
   `id` int NOT NULL AUTO_INCREMENT,
   `postId` int NOT NULL,
-  `filename` varchar(100) NOT NULL,
+  `filename` varchar(255) NOT NULL,
   `fileSize` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_fc05634b51acfe8a0ac79ee1c69` (`postId`),

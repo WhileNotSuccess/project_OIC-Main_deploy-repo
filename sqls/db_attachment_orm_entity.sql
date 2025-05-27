@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `attachment_orm_entity`;
 CREATE TABLE `attachment_orm_entity` (
   `id` int NOT NULL AUTO_INCREMENT,
   `postId` int NOT NULL,
-  `url` varchar(150) NOT NULL,
-  `originalName` varchar(100) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `originalName` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_5831c8d770ea525c5a44613a329` (`postId`),
   CONSTRAINT `FK_5831c8d770ea525c5a44613a329` FOREIGN KEY (`postId`) REFERENCES `post_orm_entity` (`id`) ON DELETE CASCADE
