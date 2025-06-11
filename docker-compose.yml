@@ -59,6 +59,12 @@ services:
     tty: true
     depends_on:
       - api
+  
+  translation-service:
+    image: borygashill608/oictranslation:latest
+    tty: true
+    ports:
+      - "5000:5000"
 
 networks:
   backend:
