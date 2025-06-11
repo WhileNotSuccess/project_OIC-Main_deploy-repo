@@ -30,7 +30,7 @@ CREATE TABLE `attachment_orm_entity` (
   PRIMARY KEY (`id`),
   KEY `FK_5831c8d770ea525c5a44613a329` (`postId`),
   CONSTRAINT `FK_5831c8d770ea525c5a44613a329` FOREIGN KEY (`postId`) REFERENCES `post_orm_entity` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `attachment_orm_entity` (
 
 LOCK TABLES `attachment_orm_entity` WRITE;
 /*!40000 ALTER TABLE `attachment_orm_entity` DISABLE KEYS */;
-INSERT INTO `attachment_orm_entity` VALUES (20,140,'/attachment/cf5d4d46-3ec7-4591-9713-d1953adb033d.applicants.pdf','applicants.pdf'),(21,141,'/attachment/196e4c1e-a3ad-4ccc-ada0-ec25d4cd6a83.guidelinesForApplicants.pdf','guidelinesForApplicants.pdf');
+INSERT INTO `attachment_orm_entity` VALUES (23,140,'/attachment/73c5b1b5-d83f-436c-b2e7-aa7936b61966-__2025.pdf','입학신청서_학위과정_2025년.pdf'),(24,141,'/attachment/9619c021-d40c-4050-86e5-700d13f6cbaa----.pdf','국제교류팀-모집요강-국문팜플렛-최종.pdf');
 /*!40000 ALTER TABLE `attachment_orm_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-04  9:49:41
+-- Dump completed on 2025-06-11 20:53:06
