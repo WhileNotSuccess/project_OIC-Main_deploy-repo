@@ -44,7 +44,7 @@ CREATE TABLE `carousel_orm_entity` (
 
 LOCK TABLES `carousel_orm_entity` WRITE;
 /*!40000 ALTER TABLE `carousel_orm_entity` DISABLE KEYS */;
-INSERT INTO `carousel_orm_entity` VALUES (3,'/carousel/cbf39d5f-093d-42f2-8436-6909f4acbc02-1-ab198932.jpg','글로벌 존','외국인 유학생과 외국어를 사용한 국제문화교류 실시','global zone','Conducting international cultural exchange with international students using foreign languages.','グローバルゾーン','外国人留学生との外国語を使用した国際文化交流を実施する。',175,175,175),(4,'/carousel/a3ace82e-a0c7-4b08-b4d1-b6b58f9f69c0-.jpg','글로벌센터','영어권 교수님들과의 영어 회화, 영문 이력서 첨삭 등의 영어 관련 비교과 특별 활동 실시','global center','Conducting extracurricular activities related to English, such as English conversation with native English-speaking professors and editing English resumes.','グローバルセンター','英語圏の教授との英会話や英語の履歴書添削など、英語に関連した課外活動を実施する。',174,174,174);
+INSERT INTO `carousel_orm_entity` VALUES (3,'/carousel/cbf39d5f-093d-42f2-8436-6909f4acbc02-1-ab198932.jpg','글로벌 존','외국인 유학생과 외국어를 사용한 국제문화교류 실시','global zone','Conducting international cultural exchange with international students using foreign languages.','グローバルゾーン','外国人留学生との外国語を使用した国際文化交流を実施する。',210,211,213),(4,'/carousel/a3ace82e-a0c7-4b08-b4d1-b6b58f9f69c0-.jpg','글로벌센터','영어권 교수님들과의 영어 회화, 영문 이력서 첨삭 등의 영어 관련 비교과 특별 활동 실시','global center','Conducting extracurricular activities related to English, such as English conversation with native English-speaking professors and editing English resumes.','グローバルセンター','英語圏の教授との英会話や英語の履歴書添削など、英語に関連した課外活動を実施する。',209,212,214);
 /*!40000 ALTER TABLE `carousel_orm_entity` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-11 20:53:07
+-- Dump completed on 2025-06-16 11:12:58
