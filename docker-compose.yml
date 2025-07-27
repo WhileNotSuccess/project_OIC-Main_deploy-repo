@@ -1,6 +1,7 @@
 services:
   db:
     image: mysql:8.1.0
+    restart: always
     environment:
       - MYSQL_DATABASE=${DB_DATABASE}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
@@ -16,6 +17,7 @@ services:
       - backend
   api:
     image: borygashill608/oicapi:latest
+    restart: always
     environment:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
@@ -49,19 +51,19 @@ services:
       - ./files:/files
     networks:
       - backend
-    depends_on:
-      - db
+
 
   web:
     image: borygashill608/oicweb:latest
+    restart: always
     ports:
       - "3000:3000"
     tty: true
-    depends_on:
-      - api
+
   
   translation-service:
     image: borygashill608/oictranslation:latest
+    restart: always
     tty: true
     ports:
       - "5000:5000"
