@@ -6,8 +6,6 @@ services:
       - MYSQL_DATABASE=${DB_DATABASE}
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - TZ=${TZ}
-    ports:
-      - "3307:3306"
     volumes:
       - ./db/conf:/etc/mysql/conf.d/:ro
       - oicdb:/var/lib/mysql
@@ -15,6 +13,7 @@ services:
       - ./sqls/:/sqls
     networks:
       - backend
+
   api:
     image: borygashill608/oicapi:latest
     restart: always
@@ -48,27 +47,29 @@ services:
       - THREADS_ACCESS_TOKEN=${THREADS_ACCESS_TOKEN}
     tty: true
     ports:
-      - "3001:3000"
+      - "127.0.0.1:3001:3000"
     volumes:
       - ./files:/files
     networks:
       - backend
-
+    depends_on:
+      - db
 
   web:
     image: borygashill608/oicweb:latest
     restart: always
-    ports:
-      - "3000:3000"
     tty: true
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - api
 
-  
   translation-service:
     image: borygashill608/oictranslation:latest
     restart: always
     tty: true
     ports:
-      - "5000:5000"
+      - "127.0.0.1:5000:5000"
 
 networks:
   backend:
