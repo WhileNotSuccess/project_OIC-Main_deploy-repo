@@ -52,17 +52,12 @@ services:
       - ./files:/files
     networks:
       - backend
-    depends_on:
-      - db
-
   web:
     image: borygashill608/oicweb:latest
     restart: always
     tty: true
     ports:
       - "127.0.0.1:3000:3000"
-    depends_on:
-      - api
 
   translation-service:
     image: borygashill608/oictranslation:latest
